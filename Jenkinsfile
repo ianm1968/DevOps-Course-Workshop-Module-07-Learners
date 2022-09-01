@@ -4,7 +4,7 @@ pipeline {
         stage('Typescript') {
             agent {
                 docker {
-                    image 'node:16-alpine'
+                    image 'node:16-alpineeee'
                 }
             }
             stages {
