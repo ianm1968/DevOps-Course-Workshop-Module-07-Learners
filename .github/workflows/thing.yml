@@ -11,6 +11,8 @@ jobs:
       run: dotnet build
     - name: Dotnet test
       run: dotnet test
-    - name: npm t
+    - name: npm ci
       working-directory: DotnetTemplate.Web
+      run: npm ci
+    - name: npm t
       run: npm t
