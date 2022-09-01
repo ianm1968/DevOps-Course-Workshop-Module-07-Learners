@@ -15,4 +15,5 @@ jobs:
       working-directory: DotnetTemplate.Web
       run: npm ci
     - name: npm t
+      working-directory: DotnetTemplate.Web
       run: npm t
