@@ -1,20 +1,21 @@
 pipeline {
-    agent any
-
+    agent none
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
+        stage('Typescript') {
+            agent {
+                docker {
+                    image 'node:16-alpine'
+                }
             }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+            stages {
+                stage('Typescript Build') {
+                    steps {
+                        dir('DotnetTemplate.Web/') {
+                            sh 'npm ci'
+                            sh 'npm run build'
+                        }
+                    }
+                }
             }
         }
     }
