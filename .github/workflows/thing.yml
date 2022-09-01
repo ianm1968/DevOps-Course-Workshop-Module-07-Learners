@@ -17,3 +17,10 @@ jobs:
     - name: npm t
       working-directory: DotnetTemplate.Web
       run: npm t
+    - name: npm lint
+      working-directory: DotnetTemplate.Web
+      run: npm run lint
+    - name: run
+      run: dotnet run
+      
+      
